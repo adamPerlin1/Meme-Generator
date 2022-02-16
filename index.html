@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>Meme Generator</title>
 </head>
-<body>
-    <header class="main-header">
+<body onload="init()">
+
+    <header class="main-header flex space-between">
         <div class="logo">logo</div>
         <nav class="main-nav-container">
-            <ul class="main-nav">
+            <ul class="main-nav clean-list flex">
                 <li><a href="#">Gallery</a></li>
                 <li><a href="#">Memes</a></li>
                 <li><a href="#">About</a></li>
@@ -21,8 +22,17 @@
 
     <section class="gallery gallery-grid"></section>
     
-    <section class="meme-editor"></section>
+    <section class="meme-editor-container flex">
+        <div class="canvas">
+            <canvas class="meme-canvas" height="400" width="400"></canvas>
+        </div>
+        <div class="editor-panel">
+            <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
+        </div>
+    </section>
 
+    <script src="js/services/memeService.js"></script>
+    <script src="js/memeController.js"></script>
     <script src="js/main.js"></script>
 </body>
 </html>

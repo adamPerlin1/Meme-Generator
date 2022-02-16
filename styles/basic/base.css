@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+
+
+.meme-editor-container {
+    background-color: rgb(162, 245, 217);
+    width: 100vw;
+    height: 90vh;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.canvas {
+    background-color: rgb(162, 245, 217);
+    width: 400px;
+    height: 400px;
+}
+
+.meme-canvas{
+    /* display: block; */
+    margin: 0 auto;
+    background-color: white;
+}
