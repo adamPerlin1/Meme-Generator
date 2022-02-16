@@ -4,27 +4,48 @@
 
 body {
     margin: 0;
+    background-color: lightgray;
 }
 
+img {
+    width: 100px;
+    height: 100px;
+}
 
+/* .logo {
+    height: 100%;
+    width: 100%;
+} */
 
-.meme-editor-container {
-    background-color: rgb(162, 245, 217);
+/* .footer {
+    background-color: rgb(255, 127, 0);
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+} */
+
+/* .gallery-grid {
+    display: grid;
+    grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px;
+    gap: 10px;
+} */
+
+/* .meme-editor-container {
     width: 100vw;
     height: 90vh;
     justify-content: center;
     align-items: center;
-
+    
 }
 
-.canvas {
-    background-color: rgb(162, 245, 217);
-    width: 400px;
-    height: 400px;
+.canvas-container {
+    width: 50%;
+    height: 50%;
 }
 
 .meme-canvas{
-    /* display: block; */
+    display: block;
     margin: 0 auto;
     background-color: white;
-}
+} */

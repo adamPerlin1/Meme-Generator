@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,10 +8,11 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>Meme Generator</title>
 </head>
+
 <body onload="init()">
 
     <header class="main-header flex space-between">
-        <div class="logo">logo</div>
+        <div><img class="logo" src="assets/LOGO.png" alt=""></div>
         <nav class="main-nav-container">
             <ul class="main-nav clean-list flex">
                 <li><a href="#">Gallery</a></li>
@@ -21,18 +23,29 @@
     </header>
 
     <section class="gallery gallery-grid"></section>
-    
-    <section class="meme-editor-container flex">
-        <div class="canvas">
-            <canvas class="meme-canvas" height="400" width="400"></canvas>
+
+    <section class="meme-editor-container flex hide">
+        <div class="canvas-container">
+            <canvas class="meme-canvas"></canvas>
         </div>
         <div class="editor-panel">
             <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
+            <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
+            <button onclick="onChangeFontSize(2)">+</button>
+            <button onclick="onChangeFontSize(-2)">-</button>
+            <button onclick="onSwitchLine()">Switch line</button>
         </div>
     </section>
 
+    <footer class="footer">
+        <div>logo</div> 
+        <small>All rights reserved 2022</small>
+    </footer>
+
     <script src="js/services/memeService.js"></script>
+    <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 </body>
+
 </html>

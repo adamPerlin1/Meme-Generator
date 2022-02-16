@@ -1,5 +1,7 @@
 /* SETUP */
 
+@import 'setup/typography.css';
+
 
 
 /* BASE */
@@ -7,8 +9,9 @@
 @import 'basic/base.css';
 @import 'basic/helpers.css';
 
-
-
 /* COMPONENT */
 
 @import 'components/main-header.css';
+@import 'components/gallery.css';
+@import 'components/meme-editor.css';
+@import 'components/footer.css';

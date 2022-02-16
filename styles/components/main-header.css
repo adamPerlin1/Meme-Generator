@@ -1,3 +1,9 @@
 .main-header {
+    background-color: rgb(255, 127, 0);
     height: 10vh;
+}
+
+.logo {
+    height: 100%;
+    width: 100%;
 }
