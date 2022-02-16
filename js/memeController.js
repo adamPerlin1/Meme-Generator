@@ -51,7 +51,6 @@ function onChangeFontSize(diff) {
 }
 
 function onSwitchLine(){
-    console.log('S');
     document.getElementById('meme-text').value = '';
     switchLine()
 }
@@ -66,7 +65,6 @@ function addListeners() {
 
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
-    console.log(elContainer);
     gElCanvas.width = elContainer.offsetWidth
     gElCanvas.height = elContainer.offsetHeight
     renderMeme()

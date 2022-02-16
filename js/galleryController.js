@@ -1,7 +1,6 @@
 'use strict'
 
 function renderGallery() {
-    // const imgId = getMeme().selectedImgId // NO NEED
     const imgs = getImgs()
     var strHtmls = imgs.map(img => {
         return `<div>
@@ -12,7 +11,6 @@ function renderGallery() {
 }
 
 function onImgSelect(imgId) {
-    console.log(imgId);
     setImg(imgId)
     document.querySelector('.meme-editor-container').classList.remove('hide')
     document.querySelector('.gallery').classList.add('hide')
