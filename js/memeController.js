@@ -84,7 +84,6 @@ function onChangeFontSize(diff) {
 }
 
 function onSwitchLine() {
-    console.log(gLinesCount);
     document.querySelector('#meme-text').value = '';
     switchLine()
 }
@@ -112,7 +111,7 @@ function getEvPos(ev) {
 }
 
 
-/*  */
+/* OUT OF TIME */
 // function addMouseListeners() {
 //     gElCanvas.addEventListener('mousedown', onDown)
     

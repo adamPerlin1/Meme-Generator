@@ -40,14 +40,6 @@ var gMeme = {
     ]
 }
 
-// function isTxtClicked(clickedPos, canvasContext) {
-    // const txtWidth = canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width
-    // console.log('clickedPos', clickedPos);
-    // console.log('canvasContext', canvasContext);
-    // console.log(gMeme.lines[gMeme.selectedLineIdx]);
-    // console.log(canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width);
-// }
-
 function addLine(lineObj) {
     gMeme.lines.push(lineObj)
 }
@@ -84,3 +76,16 @@ function getImgs() {
 function getMeme() {
     return gMeme
 }
+
+
+
+
+/* OUT OF TIME */
+
+// function isTxtClicked(clickedPos, canvasContext) {
+     // const txtWidth = canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width
+    // console.log('clickedPos', clickedPos);
+     // console.log('canvasContext', canvasContext);
+    // console.log(gMeme.lines[gMeme.selectedLineIdx]);
+    // console.log(canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width);
+   // }
