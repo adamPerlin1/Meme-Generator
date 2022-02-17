@@ -1,6 +1,11 @@
-.gallery .gallery-grid {
+ .gallery-grid {
     display: grid;
-    grid-template-columns: 100px 100px;
-    grid-template-rows: 100px 100px;
+    /* background-color: red; */
+    /* grid-template-columns: 100px 100px;
+    grid-template-rows: 100px 100px; */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    /* grid-row: 3;
+    grid-area: 2 / 1 / span 10 /span 10;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); */
     gap: 10px;
 }

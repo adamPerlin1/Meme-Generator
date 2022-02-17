@@ -1,6 +1,8 @@
 .footer {
     background-color: rgb(255, 127, 0);
-    position: absolute;
-    bottom: 0;
-    width: 100vw;
+    text-align: center;    
+}
+
+.logo {
+    margin-bottom: 77px;
 }

@@ -7,13 +7,12 @@ function renderGallery() {
                     <img onclick="onImgSelect(${img.id})" src="meme-img/${img.id}.jpg">
                 </div>`
     })
-    document.querySelector('.gallery').innerHTML = strHtmls.join()
+    document.querySelector('.gallery').innerHTML = strHtmls.join('')
 }
 
 function onImgSelect(imgId) {
     setImg(imgId)
+    document.querySelector('.gallery').style.display = 'none'
     document.querySelector('.meme-editor-container').classList.remove('hide')
-    document.querySelector('.gallery').classList.add('hide')
-    renderMeme()
     resizeCanvas()
 }

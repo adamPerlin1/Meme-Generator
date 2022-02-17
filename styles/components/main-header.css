@@ -1,9 +1,10 @@
 .main-header {
     background-color: rgb(255, 127, 0);
-    height: 10vh;
+    /* height: 6rem; */
+    height: 9vh;
 }
 
-.logo {
+/* .logo {
     height: 100%;
     width: 100%;
-}
+} */

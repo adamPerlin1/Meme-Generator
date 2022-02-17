@@ -1,18 +1,25 @@
+.main-app-container {
+    min-height: 81vh;
+}
+
+
 .meme-editor-container {
-    width: 100vw;
-    height: 90vh;
     justify-content: center;
     align-items: center;
-    
+    margin-top: 50px;
 }
 
 .canvas-container {
-    width: 50%;
-    height: 50%;
+    width: 300px;
+    height: 300px;
 }
 
 .meme-canvas{
     display: block;
     margin: 0 auto;
     background-color: white;
+}
+
+.editor-panel {
+    flex-direction: column;
 }

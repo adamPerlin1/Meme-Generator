@@ -11,8 +11,8 @@
 
 <body onload="init()">
 
-    <header class="main-header flex space-between">
-        <div><img class="logo" src="assets/LOGO.png" alt=""></div>
+    <header class="main-header flex space-between align-center">
+        <div class="logo">logo</div>
         <nav class="main-nav-container">
             <ul class="main-nav clean-list flex">
                 <li><a href="#">Gallery</a></li>
@@ -22,26 +22,33 @@
         </nav>
     </header>
 
-    <section class="gallery gallery-grid"></section>
-
-    <section class="meme-editor-container flex hide">
-        <div class="canvas-container">
-            <canvas class="meme-canvas"></canvas>
-        </div>
-        <div class="editor-panel">
-            <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
-            <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
-            <button onclick="onChangeFontSize(2)">+</button>
-            <button onclick="onChangeFontSize(-2)">-</button>
-            <button onclick="onSwitchLine()">Switch line</button>
-        </div>
-    </section>
+    <main class="main-app-container">
+        <section class="gallery gallery-grid"></section>
+    
+        <section class="meme-editor-container flex hide">
+            <div class="canvas-container">
+                <canvas class="meme-canvas"></canvas>
+            </div>
+            <div class="editor-panel flex">
+                <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
+                <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
+                <button onclick="onChangeFontSize(2)">+</button>
+                <button onclick="onChangeFontSize(-2)">-</button>
+                <button onclick="onSwitchLine()">Switch line</button>
+                <button onclick="onSetAlignTxt('center')">Center</button>
+                <button onclick="onSetAlignTxt('right')">Right</button>
+                <button onclick="onSetAlignTxt('left')">Left</button>
+                <button onclick="onSetAlignTxt('left')">Left</button>
+            </div>
+        </section>
+    </main>
 
     <footer class="footer">
-        <div>logo</div> 
+        <div class="logo">logo</div> 
         <small>All rights reserved 2022</small>
     </footer>
 
+    <script src="js/services/utilsService.js"></script>
     <script src="js/services/memeService.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>
