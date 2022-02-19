@@ -1,8 +1,11 @@
 .footer {
-    background-color: rgb(255, 127, 0);
-    text-align: center;    
+    background-color: var(--clr1);
+    text-align: center;   
+    padding-bottom: 1rem; 
 }
 
-.logo {
-    margin-bottom: 77px;
+.footer .sec-logo {
+    height: 50px;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }

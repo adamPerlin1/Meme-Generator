@@ -12,8 +12,6 @@ function init() {
     addListeners()
 }
 
-
-
 function renderMeme() {
     const meme = getMeme()
     const img = new Image()
@@ -29,42 +27,56 @@ function displayMemeOnCanvas(meme, img) {
     })
 }
 
-function txtHeightPosition(idx) {
-    const canvasHeight = gElCanvas.height
-    var y = 270
-    if (idx === 1) y = 20
-    // else if (idx > 1)  y = getRandomIntInclusive(40, 260)
-    return canvasHeight - y
-}
 
-function txtWidthPosition({ align }) {
-    var canvasWidth = gElCanvas.width
-    switch (align) {
-        case 'left':
-            canvasWidth = 10
-            break;
-        case 'right':
-            canvasWidth -= 20
-            break;
-        default:
-            canvasWidth /= 2
-            break;
-    }
-    return canvasWidth
-}
-
-function drawText({ txt, color, size, align }, x, y) {
+function drawText({ txt, color, size, align, pos }, x, y) {
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.textAlign = align
     gCtx.fillStyle = color
     gCtx.font = `${size}px impact`
-    gCtx.fillText(txt, x, y)
-    gCtx.strokeText(txt, x, y)
+
+    if (!pos.y) {
+        gCtx.fillText(txt, x, y)
+        gCtx.strokeText(txt, x, y)
+    } else {
+        gCtx.fillText(txt, x, pos.y)
+        gCtx.strokeText(txt, x, pos.y)
+    }
+}
+
+function txtHeightPosition(idx) {
+    var {height} = gElCanvas
+    var y = 270
+    if (idx === 1) y = 20
+    // else if (idx > 1)  y = getRandomIntInclusive(40, 260)
+    return height - y
+}
+
+function txtWidthPosition({ align }) {
+    var txtPosition = gElCanvas.width
+    switch (align) {
+        case 'left':
+            txtPosition = 10
+            break;
+        case 'right':
+            txtPosition -= 20
+            break;
+        default:
+            txtPosition /= 2
+            break;
+    }
+    return txtPosition
+}
+
+function onUpDownTxt(diff) {
+    const memeLine = getLine(getCurrLineIdx())
+    memeLine.pos.y += diff
+    renderMeme()
 }
 
 function onSetAlignTxt(align) {
     setAlignTxt(align)
+    renderMeme()
 }
 
 function onSetLineTxt() {
@@ -89,7 +101,6 @@ function onSwitchLine() {
 }
 
 function addListeners() {
-    // addMouseListeners()
     window.addEventListener('resize', () => {
         resizeCanvas()
     })
@@ -102,34 +113,7 @@ function resizeCanvas() {
     renderMeme()
 }
 
-function getEvPos(ev) {
-    var pos = {
-        x: ev.offsetX,
-        y: ev.offsetY
-    }
-    return pos
+function onDownloadMeme(elLink) {
+    const data = gElCanvas.toDataURL();
+    elLink.href = data;
 }
-
-
-/* OUT OF TIME */
-// function addMouseListeners() {
-//     gElCanvas.addEventListener('mousedown', onDown)
-    
-// }
-
-
-// function onDown(ev) {
-    // console.log(ev);
-    // const meme = getMeme()
-    // const pos = getEvPos(ev)
-    // console.log('pos', pos);
-    // console.log('onDown()');
-    // if (!isTxtClicked(pos, gCtx)) return
-    
-
-    // const txtWidth = gCtx.measureText(meme.lines[meme.selectedLineIdx].txt).width
-    // const txtHeight = meme.lines[meme.selectedLineIdx].size
-    // console.log(txtWidth);
-    // console.log(txtHeight);
-    // gCtx.strokeRect(50, meme.pos.y, txtWidth, 20);
-// }

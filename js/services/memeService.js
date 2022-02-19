@@ -29,23 +29,27 @@ var gMeme = {
             txt: '',
             size: 20,
             align: 'center',
-            color: 'white'
+            color: 'white',
+            pos: {
+                x: null,
+                y: null
+            }
         },
         {
             txt: '',
             size: 20,
             align: 'center',
-            color: 'white'
+            color: 'white',
+            pos: {
+                x: null,
+                y: null
+            }
         }
     ]
 }
 
-function addLine(lineObj) {
-    gMeme.lines.push(lineObj)
-}
-
 function switchLine() {
-    if (gMeme.selectedLineIdx >= gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
+    if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
 }
 
@@ -69,6 +73,14 @@ function setLineTxt(memeTxt) {
     gMeme.lines[gMeme.selectedLineIdx].txt = memeTxt
 }
 
+function getLine(lineIdx) {
+    return gMeme.lines[lineIdx]
+}
+
+function getCurrLineIdx(){
+    return gMeme.selectedLineIdx
+}
+
 function getImgs() {
     return gImgs
 }
@@ -76,16 +88,3 @@ function getImgs() {
 function getMeme() {
     return gMeme
 }
-
-
-
-
-/* OUT OF TIME */
-
-// function isTxtClicked(clickedPos, canvasContext) {
-     // const txtWidth = canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width
-    // console.log('clickedPos', clickedPos);
-     // console.log('canvasContext', canvasContext);
-    // console.log(gMeme.lines[gMeme.selectedLineIdx]);
-    // console.log(canvasContext.measureText(gMeme.lines[gMeme.selectedLineIdx].txt).width);
-   // }

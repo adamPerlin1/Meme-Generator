@@ -12,6 +12,7 @@ function renderGallery() {
 
 function onImgSelect(imgId) {
     setImg(imgId)
+    document.querySelector('.search-bar').classList.add('hide')
     document.querySelector('.gallery').style.display = 'none'
     document.querySelector('.meme-editor-container').classList.remove('hide')
     resizeCanvas()

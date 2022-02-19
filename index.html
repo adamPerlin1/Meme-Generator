@@ -12,43 +12,69 @@
 <body onload="init()">
 
     <header class="main-header flex space-between align-center">
-        <div class="logo">logo</div>
+        <img class="main-logo" src="assets/LOGO.png" alt="Memegen">
         <nav class="main-nav-container">
             <ul class="main-nav clean-list flex">
-                <li><a href="#">Gallery</a></li>
-                <li><a href="#">Memes</a></li>
-                <li><a href="#">About</a></li>
+                <li><a class="flex center" href="#">Gallery</a></li>
+                <li><a class="flex center" href="#">Memes</a></li>
+                <li><a class="flex center" href="#">About</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="main-app-container">
+        <section class="search-bar"></section>
         <section class="gallery gallery-grid"></section>
     
         <section class="meme-editor-container flex hide">
             <div class="canvas-container">
                 <canvas class="meme-canvas"></canvas>
             </div>
-            <div class="editor-panel flex">
+            <div class="share-container"></div>
+
+            <div class="editor-panel">
                 <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
                 <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
-                <button onclick="onChangeFontSize(2)">+</button>
-                <button onclick="onChangeFontSize(-2)">-</button>
-                <button onclick="onSwitchLine()">Switch line</button>
-                <button onclick="onSetAlignTxt('center')">Center</button>
-                <button onclick="onSetAlignTxt('right')">Right</button>
-                <button onclick="onSetAlignTxt('left')">Left</button>
-                <button onclick="onSetAlignTxt('left')">Left</button>
+                <button class="btn-img" onclick="onChangeFontSize(2)">
+                    <img  src="assets/ICONS/increase font - icon.png" alt="+">
+                </button>
+                <button class="btn-img" onclick="onChangeFontSize(-2)">
+                    <img  src="assets/ICONS/decrease font - icon.png" alt="-">
+                </button>
+                <button class="btn-img" onclick="onSwitchLine()">
+                    <img src="assets/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="Switch line">
+                </button>
+                <button class="btn-img" onclick="onSetAlignTxt('center')">
+                    <img src="assets/ICONS/center-text-alignment.png" alt="Center">
+                </button>
+                <button class="btn-img" onclick="onSetAlignTxt('right')">
+                    <img src="assets/ICONS/align-to-right.png" alt="Right">
+                </button>
+                <button class="btn-img" onclick="onSetAlignTxt('left')">
+                    <img src="assets/ICONS/align-to-left.png" alt="Left">
+                </button>
+                <button class="btn-img" onclick="onUpDownTxt(-2)">
+                    <img src="assets/ICONS/outline_arrow_upward_black_24dp.png" alt="">
+                </button>
+                <button class="btn-img" onclick="onUpDownTxt(2)">
+                    <img src="assets/ICONS/outline_arrow_downward_black_24dp.png" alt="">
+                </button>
+                <button class="btn-img" onclick="uploadMeme()">
+                    <img src="assets/ICONS/outline_share_black_24dp.png" alt="">
+                </button>
+                <a href="#" onclick="onDownloadMeme(this)" download="my-meme">Download</a>
             </div>
         </section>
+        <p class="user-msg"></p>
     </main>
 
     <footer class="footer">
-        <div class="logo">logo</div> 
+        <img class="sec-logo" src="assets/LOGO.png" alt="Memegen">
         <small>All rights reserved 2022</small>
     </footer>
 
     <script src="js/services/utilsService.js"></script>
+    <script src="js/services/uploadService.js"></script>
     <script src="js/services/memeService.js"></script>
     <script src="js/galleryController.js"></script>
     <script src="js/memeController.js"></script>

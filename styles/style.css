@@ -1,6 +1,8 @@
 /* SETUP */
 
 @import 'setup/typography.css';
+@import 'setup/vars.css';
+
 
 
 
@@ -11,6 +13,7 @@
 
 /* COMPONENT */
 
+@import 'components/search-bar.css';
 @import 'components/main-header.css';
 @import 'components/gallery.css';
 @import 'components/meme-editor.css';

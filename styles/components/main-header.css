@@ -1,10 +1,24 @@
 .main-header {
-    background-color: rgb(255, 127, 0);
+    background-color: var(--clr1);
     /* height: 6rem; */
     height: 9vh;
 }
 
-/* .logo {
-    height: 100%;
-    width: 100%;
-} */
+.main-logo {
+    width: min-content;
+    height: 70%;
+}
+
+.main-header .main-nav-container .main-nav>* {
+    margin-inline-end: 80px;
+}
+
+.main-header a{
+    height: 9vh;
+    border-inline-end: 1px solid var(--clr10);
+}
+
+.main-header .main-nav-container .main-nav li:hover {
+    box-shadow: inset 0px -6px 0 black;
+
+}

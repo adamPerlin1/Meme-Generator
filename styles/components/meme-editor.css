@@ -6,6 +6,15 @@
     justify-content: center;
     align-items: center;
     margin-top: 50px;
+    gap: 20px;
+}
+
+.btn-img {
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: #fff;
+    border-radius: 5px;
 }
 
 .canvas-container {
@@ -20,5 +29,12 @@
 }
 
 .editor-panel {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(5, 50px);
+    grid-template-rows: repeat(4, 50px);
+    gap: 10px;
+}
+
+#meme-text {
+    grid-column: span 4;
 }
