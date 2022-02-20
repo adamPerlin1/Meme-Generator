@@ -5,6 +5,7 @@
 .meme-editor-container {
     justify-content: center;
     align-items: center;
+    margin: 50px;
     gap: 20px;
 }
 
