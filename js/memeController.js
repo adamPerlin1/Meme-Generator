@@ -23,52 +23,46 @@ function renderMeme() {
 function displayMemeOnCanvas(meme, img) {
     gCtx.drawImage(img, 0, 0, gElCanvas.width, gElCanvas.height)
     meme.lines.forEach((line, idx) => {
-        drawText(line, txtWidthPosition(line), txtHeightPosition(idx))
+        drawText(line, txtWidthPosition(line), idx)
     })
 }
 
 
-function drawText({ txt, color, size, align, pos }, x, y) {
+function drawText({ txt, color, size, align, pos }, x, idx) {
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
     gCtx.textAlign = align
     gCtx.fillStyle = color
     gCtx.font = `${size}px impact`
 
-    if (!pos.y) {
-        gCtx.fillText(txt, x, y)
-        gCtx.strokeText(txt, x, y)
-    } else {
-        gCtx.fillText(txt, x, pos.y)
-        gCtx.strokeText(txt, x, pos.y)
-    }
+    if (!pos.y) pos.y = txtHeightPosition(idx)
+    
+    pos.x = x
+    gCtx.fillText(txt, pos.x, pos.y)
+    gCtx.strokeText(txt, pos.x, pos.y)
 }
 
 function txtHeightPosition(idx) {
-    var {height} = gElCanvas
-    var y = 270
-    if (idx === 1) y = 20
-    // else if (idx > 1)  y = getRandomIntInclusive(40, 260)
-    return height - y
+    const { height } = gElCanvas
+    var y = 30
+    if (idx === 1) y = height - 10
+    else if (idx > 1) y = height / 2
+    return y
 }
 
 function txtWidthPosition({ align }) {
-    var txtPosition = gElCanvas.width
+    const { width } = gElCanvas
     switch (align) {
         case 'left':
-            txtPosition = 10
-            break;
+            return 10
         case 'right':
-            txtPosition -= 20
-            break;
+            return width - 20
         default:
-            txtPosition /= 2
-            break;
+            return width / 2
     }
-    return txtPosition
 }
 
-function onUpDownTxt(diff) {
+function moveTxt(diff) {
     const memeLine = getLine(getCurrLineIdx())
     memeLine.pos.y += diff
     renderMeme()
@@ -96,7 +90,7 @@ function onChangeFontSize(diff) {
 }
 
 function onSwitchLine() {
-    document.querySelector('#meme-text').value = '';
+    document.querySelector('#meme-text').value = ''
     switchLine()
 }
 
@@ -108,8 +102,7 @@ function addListeners() {
 
 function resizeCanvas() {
     const elContainer = document.querySelector('.canvas-container')
-    gElCanvas.width = elContainer.offsetWidth
-    gElCanvas.height = elContainer.offsetHeight
+    gElCanvas.width = gElCanvas.height = elContainer.offsetWidth
     renderMeme()
 }
 
