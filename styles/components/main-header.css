@@ -2,6 +2,9 @@
     background-color: var(--clr1);
     /* height: 6rem; */
     height: 9vh;
+    overflow: hidden;
+    margin-bottom: 90px;
+    padding-left: 30px;
 }
 
 .main-logo {

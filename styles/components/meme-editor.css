@@ -5,7 +5,6 @@
 .meme-editor-container {
     justify-content: center;
     align-items: center;
-    margin-top: 50px;
     gap: 20px;
 }
 
@@ -14,7 +13,8 @@
     width: 50px;
     border: none;
     background-color: #fff;
-    border-radius: 5px;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 .canvas-container {
@@ -30,10 +30,78 @@
 .editor-panel {
     display: grid;
     grid-template-columns: repeat(5, 50px);
-    grid-template-rows: repeat(4, 50px);
+    grid-template-rows: repeat(5, 50px);
     gap: 10px;
 }
 
 #meme-text {
-    grid-column: span 4;
+    grid-column: span 5;
+    border: none;
+    border-radius: 15px;
 }
+
+.editor-panel .switch {
+    grid-column: 2;
+}
+
+.editor-panel .bigger-font {
+    grid-row: 3;
+}
+
+.editor-panel .smaller-font {
+    grid-row: 3;
+}
+
+.editor-panel .center {
+    grid-row: 3;
+    grid-column: 4;
+}
+
+.editor-panel .right {
+    grid-row: 3;
+    grid-column: 5;
+}
+
+.editor-panel .left {
+    grid-row: 3;
+    grid-column: 3;
+}
+
+.editor-panel .color {
+    grid-row: 4;
+    grid-column: 2;
+}
+
+.editor-panel #color {
+    grid-row: 4;
+    grid-column: 2;
+    opacity: 0;
+}
+
+.editor-panel .up {
+    grid-row: 4;
+    grid-column: 3;
+}
+
+.editor-panel .down {
+    grid-row: 4;
+    grid-column: 4;
+}
+
+.editor-panel .share {
+    grid-row: 5;
+    grid-column: 2;
+}
+
+.editor-panel .download {
+    grid-row: 5;
+    grid-column: 4;
+    opacity: 0;
+
+}
+.editor-panel .download-img {
+    grid-row: 5;
+    grid-column: 4;
+
+}
+

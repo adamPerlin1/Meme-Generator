@@ -26,8 +26,8 @@ var gMeme = {
 
     lines: [
         {
-            txt: '',
-            size: 20,
+            txt: 'Funny something',
+            size: 30,
             align: 'center',
             color: 'white',
             pos: {
@@ -36,8 +36,8 @@ var gMeme = {
             }
         },
         {
-            txt: '',
-            size: 20,
+            txt: 'Something Funny',
+            size: 30,
             align: 'center',
             color: 'white',
             pos: {
@@ -51,6 +51,24 @@ var gMeme = {
 function switchLine() {
     if (gMeme.selectedLineIdx === gMeme.lines.length - 1) gMeme.selectedLineIdx = 0
     else gMeme.selectedLineIdx++
+}
+
+function deleteLine() {
+    gMeme.lines.splice(gMeme.lines[gMeme.selectedLineIdx], 1)
+}
+
+function addLine() {
+    gMeme.lines.push({
+        txt: 'New line',
+        fontFam: 'impact',
+        size: 30,
+        align: 'center',
+        color: 'white',
+        pos: {
+            x: null,
+            y: null
+        }
+    })
 }
 
 function changeFontSize(diff) {
@@ -77,7 +95,7 @@ function getLine(lineIdx) {
     return gMeme.lines[lineIdx]
 }
 
-function getCurrLineIdx(){
+function getCurrLineIdx() {
     return gMeme.selectedLineIdx
 }
 

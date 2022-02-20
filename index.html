@@ -12,7 +12,7 @@
 <body onload="init()">
 
     <header class="main-header flex space-between align-center">
-        <img class="main-logo" src="assets/LOGO.png" alt="Memegen">
+        <img class="main-logo" src="assets/logo.png" alt="Memegen">
         <nav class="main-nav-container">
             <ul class="main-nav clean-list flex">
                 <li><a class="flex center" href="#">Gallery</a></li>
@@ -25,7 +25,7 @@
     <main class="main-app-container">
         <section class="search-bar"></section>
         <section class="gallery gallery-grid"></section>
-    
+
         <section class="meme-editor-container flex hide">
             <div class="canvas-container">
                 <canvas class="meme-canvas"></canvas>
@@ -34,42 +34,50 @@
 
             <div class="editor-panel">
                 <input type="text" id="meme-text" name="meme-text" oninput="onSetLineTxt()" placeholder="Enter text here">
-                <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
-                <button class="btn-img" onclick="onChangeFontSize(2)">
-                    <img  src="assets/ICONS/increase font - icon.png" alt="+">
-                </button>
-                <button class="btn-img" onclick="onChangeFontSize(-2)">
-                    <img  src="assets/ICONS/decrease font - icon.png" alt="-">
-                </button>
-                <button class="btn-img" onclick="onSwitchLine()">
+                <button class="btn-img switch" onclick="onSwitchLine()">
                     <img src="assets/ICONS/up-and-down-opposite-double-arrows-side-by-side.png" alt="Switch line">
                 </button>
-                <button class="btn-img" onclick="onSetAlignTxt('center')">
+                <button class="btn-img" onclick="onAddLine()">
+                    <img src="assets/ICONS/add.png" alt="Add">
+                </button>
+                <button class="btn-img" onclick="onDeleteLine()">
+                    <img src="assets/ICONS/trash.png" alt="Remove">
+                </button>
+                <button class="btn-img bigger-font" onclick="onChangeFontSize(2)">
+                    <img src="assets/ICONS/increase font - icon.png" alt="+">
+                </button>
+                <button class="btn-img smaller-font" onclick="onChangeFontSize(-2)">
+                    <img src="assets/ICONS/decrease font - icon.png" alt="-">
+                </button>
+                <button class="btn-img center" onclick="onSetAlignTxt('center')">
                     <img src="assets/ICONS/center-text-alignment.png" alt="Center">
                 </button>
-                <button class="btn-img" onclick="onSetAlignTxt('right')">
+                <button class="btn-img right" onclick="onSetAlignTxt('right')">
                     <img src="assets/ICONS/align-to-right.png" alt="Right">
                 </button>
-                <button class="btn-img" onclick="onSetAlignTxt('left')">
+                <button class="btn-img left" onclick="onSetAlignTxt('left')">
                     <img src="assets/ICONS/align-to-left.png" alt="Left">
                 </button>
-                <button class="btn-img" onclick="moveTxt(-2)">
+                <img class="btn-img color" src="assets/ICONS/paint-board-and-brush.png" alt="color">
+                <input type="color" id="color" name="color" value="#FFFFFF" oninput="onSetColor()" />
+                <button class="btn-img up" onclick="moveTxt(-2)">
                     <img src="assets/ICONS/outline_arrow_upward_black_24dp.png" alt="">
                 </button>
-                <button class="btn-img" onclick="moveTxt(2)">
+                <button class="btn-img down" onclick="moveTxt(2)">
                     <img src="assets/ICONS/outline_arrow_downward_black_24dp.png" alt="">
                 </button>
-                <button class="btn-img" onclick="uploadMeme()">
+                <button class="btn-img share" onclick="uploadMeme()">
                     <img src="assets/ICONS/outline_share_black_24dp.png" alt="">
                 </button>
-                <a href="#" onclick="onDownloadMeme(this)" download="my-meme">Download</a>
+                <img class="btn-img download-img" src="assets/ICONS/outline_file_download_black_24dp.png" alt="">
+                <a class="download" href="#" onclick="onDownloadMeme(this)" download="my-meme">Download</a>
             </div>
         </section>
         <p class="user-msg"></p>
     </main>
 
     <footer class="footer">
-        <img class="sec-logo" src="assets/LOGO.png" alt="Memegen">
+        <img class="sec-logo" src="assets/logo.png" alt="Memegen">
         <small>All rights reserved 2022</small>
     </footer>
 

@@ -2,14 +2,13 @@
 
 var gElCanvas
 var gCtx
-var gLinesCount
 
 function init() {
-    gLinesCount = 0
     renderGallery()
     gElCanvas = document.querySelector('.meme-canvas')
     gCtx = gElCanvas.getContext('2d')
     addListeners()
+    
 }
 
 function renderMeme() {
@@ -27,7 +26,6 @@ function displayMemeOnCanvas(meme, img) {
     })
 }
 
-
 function drawText({ txt, color, size, align, pos }, x, idx) {
     gCtx.lineWidth = 1
     gCtx.strokeStyle = 'black'
@@ -36,7 +34,7 @@ function drawText({ txt, color, size, align, pos }, x, idx) {
     gCtx.font = `${size}px impact`
 
     if (!pos.y) pos.y = txtHeightPosition(idx)
-    
+
     pos.x = x
     gCtx.fillText(txt, pos.x, pos.y)
     gCtx.strokeText(txt, pos.x, pos.y)
@@ -68,14 +66,22 @@ function moveTxt(diff) {
     renderMeme()
 }
 
-function onSetAlignTxt(align) {
-    setAlignTxt(align)
+// function fontSizeAdjustment() {
+
+// }
+
+function onDeleteLine() {
+    deleteLine()
     renderMeme()
 }
 
-function onSetLineTxt() {
-    const txtInput = document.querySelector('#meme-text')
-    setLineTxt(txtInput.value)
+function onAddLine() {
+    addLine()
+    renderMeme()
+}
+
+function onSetAlignTxt(align) {
+    setAlignTxt(align)
     renderMeme()
 }
 
@@ -89,9 +95,16 @@ function onChangeFontSize(diff) {
     renderMeme()
 }
 
+function onSetLineTxt() {
+    const txtInput = document.querySelector('#meme-text')
+    setLineTxt(txtInput.value)
+    renderMeme()
+}
+
 function onSwitchLine() {
-    document.querySelector('#meme-text').value = ''
     switchLine()
+    const memeLine = getLine(getCurrLineIdx())
+    document.querySelector('#meme-text').value = memeLine.txt
 }
 
 function addListeners() {
@@ -101,6 +114,8 @@ function addListeners() {
 }
 
 function resizeCanvas() {
+    const memeLine = getLine(1)
+    memeLine.pos.y = 0
     const elContainer = document.querySelector('.canvas-container')
     gElCanvas.width = gElCanvas.height = elContainer.offsetWidth
     renderMeme()
